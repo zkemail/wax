@@ -1,7 +1,8 @@
+// TODO Remove and use ZKemail package version
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-/// @title Interface for ZKP Passwrod Groth16 verifier
+/// @title Interface for ZKEmail dkim registry
 interface IDKIMRegsitry {
     function isDKIMPublicKeyHashValid(
         string memory domainName,
