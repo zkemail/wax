@@ -39,11 +39,14 @@ contract OracleDKIMRegsitry is Ownable, IDKIMOracleRegistry {
         dkimOracle.requestUpdate(domainName);
     }
 
+    // TODO figure out how we want to handle this selector
     function handleUpdate(
+        string memory selector,
         string memory domainName,
         bytes32 publicKeyHash
     ) external onlyOracle {
         // Check update is valid
+        require(bytes(selector).length != 0, "Invalid selector");
         require(bytes(domainName).length != 0, "Invalid domain name");
         require(publicKeyHash != bytes32(0), "Invalid public key hash");
         require(isDKIMPublicKeyHashValid(domainName, publicKeyHash) == false, "publicKeyHash is already set");
