@@ -55,3 +55,29 @@ cp .env.example .env
 ```bash
 yarn hardhat test
 ```
+
+
+# For zkSync
+
+## Build
+
+Install foundry-zksync
+forge build
+
+## Missing libraries
+
+forge create --deploy-missing-libraries --private-key {YOUR_PRIVATE_KEY} --rpc-url https://sepolia.era.zksync.dev --chain 300 --zksync
+
+
+## Deployment
+
+Fill .env with the values
+
+```
+source .env
+forge script script/DeploySafeZkEmailRecoveryPlugin.s.sol:Deploy --zksync --rpc-url $SEPOLIA_RPC_URL --broadcast -vvvv
+```
+
+```
+SafeZkEmailRecoveryPlugin deployed at: 0xa87f3EeDe036cd74B4Ef7F754CD11c6A8A0caF6E
+```

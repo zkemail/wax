@@ -14,5 +14,21 @@ allow_paths = [
 remappings = [
     "@getwax/circuits/=node_modules/@getwax/circuits",
 ]
+ignored_warnings_from = [
+    "lib/kernel/src/common/Constants.sol",
+    "lib/kernel/src/common/Enums.sol",
+    "lib/kernel/src/common/Types.sol",
+    "lib/kernel/lib/I4337/src/artifacts/EntryPoint_0_6.sol",
+]
+libraries = ["/Users/wataru_shinohara/GitHub/getwax/wax/packages/plugins/lib/account-abstraction/contracts/samples/bls/lib/BLSOpen.sol:BLSOpen:0x5d089b99671b61823a62d8e6934bbeb90268fe00", "/Users/wataru_shinohara/GitHub/getwax/wax/packages/plugins/lib/ether-email-auth/packages/contracts/src/libraries/DecimalUtils.sol:DecimalUtils:0x586786290055095309a230cab1e7ba232948f31d", "/Users/wataru_shinohara/GitHub/getwax/wax/packages/plugins/lib/ether-email-auth/packages/contracts/src/libraries/SubjectUtils.sol:SubjectUtils:0x57b47145fff36d9dff5a6e72414a6144b2ca1928"]
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
+
+[profile.zksync]
+src = 'src'
+libs = [
+    "lib",
+]
+fallback_oz = true
+is_system = false
+mode = "3"
