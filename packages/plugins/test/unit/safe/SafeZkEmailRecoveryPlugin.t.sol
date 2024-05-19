@@ -1,6 +1,6 @@
 // TODO: (merge-ok) Rewrite unit tests for zk email recovery module #235
 // // SPDX-License-Identifier: MIT
-// pragma solidity ^0.8.12;
+pragma solidity ^0.8.12;
 
 // import "forge-std/Test.sol";
 // import "forge-std/console2.sol";
